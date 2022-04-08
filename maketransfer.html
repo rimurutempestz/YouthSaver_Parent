@@ -1,0 +1,392 @@
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/buttons.css" rel="stylesheet">
+    <title>Select Bank Page [Parent]</title>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    
+</head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+html,
+body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100%;
+  width: 100%; 
+  background: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+ 
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.container-fostrap {
+  display: table-cell;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+.fostrap-logo {
+  width: 100px;
+  margin-bottom:15px
+}
+h1.heading {
+  color: #fff;
+  font-size: 1.15em;
+  font-weight: 900;
+  margin: 0 0 0.5em;
+  color: #505050;
+}
+@media (min-width: 450px) {
+  h1.heading {
+    font-size: 3.55em;
+  }
+}
+@media (min-width: 760px) {
+  h1.heading {
+    font-size: 3.05em;
+  }
+}
+@media (min-width: 900px) {
+  h1.heading {
+    font-size: 3.25em;
+    margin: 0 0 0.3em;
+  }
+} 
+.card {
+  display: block; 
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+    transition: box-shadow .25s; 
+}
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.img-card {
+  width: 100%;
+  height:200px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  display:block;
+    overflow: hidden;
+}
+.img-card img{
+  width: 100%;
+  height: 200px;
+  object-fit:cover; 
+  transition: all .25s ease;
+} 
+.card-content {
+  padding:15px;
+  text-align:left;
+}
+.card-title {
+  margin-top:0px;
+  font-weight: 700;
+  font-size: 1.65em;
+}
+.card-title a {
+  color: #000;
+  text-decoration: none !important;
+}
+.card-read-more {
+  border-top: 1px solid #D4D4D4;
+}
+.card-read-more a {
+  text-decoration: none !important;
+  padding:10px;
+  font-weight:600;
+  text-transform: uppercase
+}
+</style>
+<body style=" background-image: url('background7.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+   <!-- nav bar -->
+   <div id="page-wrap-nav">
+    <nav class="navbar navbar-expand-sm navbar-info bg-info">
+        <!-- company brand with a logo image -->
+        <a  id="navbar-brand" class="navbar-brand" href="#" style="padding-left:10px; padding-right:10px;">
+             <b style="color:white;">YouthSaver</b>
+        </a>
+                    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><span class="iconify-inline" data-icon="ant-design:menu-outlined" style="color: white;" data-width="30" data-height="30"></span>
+        </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <span style= "font-size:21px; display:inline-block; color:white;">Welcome, </span>
+                <a class="nav-link dropdown-toggle" style="font-size:21px; display:inline-block; color:white;" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: auto !important; right: 0px; background-color:#17a2b8;" >
+                  <a class="dropdown-item" href="#" onclick="logout()" style="color:white; background-color: #17a2b8;"><span class="iconify" data-icon="codicon:sign-out" style="color: white;" data-width="20" data-height="20"></span>
+                    Logout</a>
+               
+                </div>
+              </li>
+            </ul>
+
+        </div>
+        <!-- the rest of buttons -->
+    </nav> 
+</div>
+
+
+<div id="page-wrap" style="background:transparent;">
+    <div class="container-fluid">
+        <div class="row" style="text-align:center;">
+            <div class="col-md-12">
+                <b>Transferring to <span id = "childname"></span></b>
+            </div>
+           
+        
+
+        </div>
+        <hr>
+        <div class="row" style="text-align:center;">
+            <div class="col-md-12">
+                <span>
+                    <b>Note:</b> Transferring this amount will be placed into your child savings account which <b>can be spent on their Wishlist.</b> This transfer should <b>act as a reward</b> when the child 'earns' it and <b>not for their allowance</b>.
+                </span>
+            </div>
+            <div class="col-md-12">
+            <section class="wrapper">
+              <div class="container-fostrap">
+                        <span id = "displaycard"></span>
+                          <b>From Account:</b>
+                          <br>
+                          <div id = "account_select"></div>
+                          <br>
+                          <b>Balance: </b>    <div id = "account_balance"></div><br>
+                          <b>Description: </b><br>
+                          <input type="text" id="description" name="description" ><br><br>
+                          <b>Amount: </b><br>
+                          <input type="number" id="amount" name="amount" ><br><br>
+                          
+                          <button type="button" class="btn btn-success btn-sm btn-radius" onclick = "verifyfield()">Make a Transfer</button>
+                      
+                  
+              </div>
+          </section>
+        </div>
+        </div>
+        
+        
+
+  
+</div>
+</div>
+
+
+
+
+<div class="modal fade" id="successmodal" tabindex="-1" role="dialog" aria-labelledby="otplabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="parentnote">YouthSaver A/C Transfer</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              
+              <div class="row" style=" margin:0px;">
+                  
+                  
+                  <div class="col-sm-12" style="text-align:center; font-size:25px;">
+                     Transferred Completed!
+                  </div><br><br>
+                  <span class="col-sm-12" style="text-align:center;"><img src="success.png" width="60" height="60"></span>
+                  
+              </div>
+
+             
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="cancel()">Cancel</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="failmodal" tabindex="-1" role="dialog" aria-labelledby="otplabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="parentnote">YouthSaver A/C Transfer</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              
+              <div class="row" style=" margin:0px;">
+                  
+                  
+                  <div class="col-sm-12" style="text-align:center; font-size:25px;" id="failmssg">
+                     
+                  </div><br><br>
+                  <span class="col-sm-12" style="text-align:center;"><img src="fail.png" width="60" height="60"></span>
+                  
+              </div>
+
+             
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+
+
+<script>
+
+var url_string = window.location;
+var url = new URL(url_string);
+childcustid= url.searchParams.get("childcustid").split('?')[0];
+//child_id = child_id.slice(6,10);
+child_name= url.searchParams.get("childname").split('?')[0];
+childDepositAccount= url.searchParams.get("childDepositAccount").split('?')[0];
+Gender= url.searchParams.get("Gender").split('?')[0];
+userid = localStorage.getItem('userID')
+pin = localStorage.getItem('PIN')
+parentgivenname = localStorage.getItem("givenname_response")
+document.getElementById("navbarDropdown1").innerText = parentgivenname; 
+getparentacno = "000000"+ localStorage.getItem("parentacno")
+document.getElementById("childname").innerHTML = child_name;
+
+if (Gender == "male"){
+                  image_source = "cartman.jpg";
+              } 
+  else {
+                  image_source = "wendy.jpg";
+              }
+document.getElementById("displaycard").innerHTML = `<img src="` + image_source + `" style="width:150px;height:150px;"/><br>`
+   
+	function display_account(){
+		 var request = new XMLHttpRequest();
+		 var params = JSON.stringify({"userID" : userid,  "pin" : pin});
+				request.onreadystatechange = function() {
+						if (request.readyState == 4 && request.status == 200) {
+              var obj = JSON.parse(this.responseText);
+              document.getElementById("account_select").innerHTML = '<select class="form-select" aria-label="Default select example" > <option selected>' + obj.accountDetails.AccountID + '</option>';
+							document.getElementById("account_balance").innerHTML = "$" + obj.accountDetails.Balance;
+              parent_id = obj.accountDetails.AccountID.slice(6,10);
+              }					
+						}
+				
+				var final_url = "https://customer-jdmb6xkj5a-as.a.run.app/parent/details";
+				
+				
+
+				request.open("POST", final_url, true);
+				request.send(params);
+	}
+	
+	display_account();
+  
+  function verifyfield(){
+    if(document.getElementById("description").value=='' && document.getElementById("amount").value==''){
+      alert('Please fill up all the fields.')
+    }
+    else{
+      make_transfer();
+    }
+  }
+
+  async function make_transfer(){
+    description = document.getElementById("description").value;
+    amount = document.getElementById("amount").value;
+    balance = document.getElementById("account_balance").innerHTML.replace('$','')
+    
+    console.log(balance)
+    if (parseFloat(amount) < parseFloat(balance) ){
+		getchildcred = await fetch ('https://customer-jdmb6xkj5a-as.a.run.app/child/credentials?customerID=' + childcustid) 
+    getchildcred = await getchildcred.json()
+    childuserid = getchildcred.data.UserID
+    childpin = getchildcred.data.Pin
+    parenttransferdetail = {
+                  ParentUserID : userid,
+                  ParentPin : pin,
+                  ParentDepositAccountID : getparentacno,
+                  ChildUserID : childuserid,
+                  ChildPin: childpin,
+                  ChildDepositAccountID : childDepositAccount,
+                  ChildCustomerID : childcustid,
+                  Amount : amount,
+                  Description : description
+                    }
+    console.log(parenttransferdetail)
+		transferchild = await fetch ('https://account-jdmb6xkj5a-as.a.run.app/transfer',{method:'post',body:JSON.stringify(parenttransferdetail)})
+		transferchild = await transferchild.json()
+    console.log(transferchild.message)
+        if(transferchild.message=='transfer successful'){
+            var myModal = document.getElementById("successmodal");
+            var modal = new bootstrap.Modal(myModal);
+            modal.show(); 
+            
+            
+        }
+        else{
+          document.getElementById("failmssg").innerText = "Transaction Failed."
+          var myModal = document.getElementById("failmodal");
+          var modal = new bootstrap.Modal(myModal);
+          modal.show(); 
+        }
+      }
+    else{
+      document.getElementById("failmssg").innerText = "Transaction Failed due to insufficient balance."
+          var myModal = document.getElementById("failmodal");
+          var modal = new bootstrap.Modal(myModal);
+          modal.show(); 
+    }
+	}
+function cancel(){
+  location.reload()
+}
+  function logout(){
+    localStorage.clear();
+    window.location.href = "parentlogin.html";
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+
+
+
+</html>

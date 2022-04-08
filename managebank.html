@@ -1,0 +1,367 @@
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/buttons.css" rel="stylesheet">
+    <title>Manage Child Page</title>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    
+</head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+html,
+body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100%;
+  width: 100%; 
+  background: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+ 
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.container-fostrap {
+  display: table-cell;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+.fostrap-logo {
+  width: 100px;
+  margin-bottom:15px
+}
+h1.heading {
+  color: #fff;
+  font-size: 1.15em;
+  font-weight: 900;
+  margin: 0 0 0.5em;
+  color: #505050;
+}
+@media (min-width: 450px) {
+  h1.heading {
+    font-size: 3.55em;
+  }
+}
+@media (min-width: 760px) {
+  h1.heading {
+    font-size: 3.05em;
+  }
+}
+@media (min-width: 900px) {
+  h1.heading {
+    font-size: 3.25em;
+    margin: 0 0 0.3em;
+  }
+} 
+.card {
+  display: block; 
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+    transition: box-shadow .25s; 
+}
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.img-card {
+  width: 100%;
+  height:200px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  display:block;
+    overflow: hidden;
+}
+.img-card img{
+  width: 100%;
+  height: 200px;
+  object-fit:cover; 
+  transition: all .25s ease;
+} 
+.card-content {
+  padding:15px;
+  text-align:left;
+}
+.card-title {
+  margin-top:0px;
+  font-weight: 700;
+  font-size: 1.65em;
+}
+.card-title a {
+  color: #000;
+  text-decoration: none !important;
+}
+.card-read-more {
+  border-top: 1px solid #D4D4D4;
+}
+.card-read-more a {
+  text-decoration: none !important;
+  padding:10px;
+  font-weight:600;
+  text-transform: uppercase
+}
+</style>
+<body >
+
+   <!-- nav bar -->
+   <div id="page-wrap-nav">
+    <nav class="navbar navbar-expand-sm navbar-info bg-info">
+        <!-- company brand with a logo image -->
+        <a  id="navbar-brand" class="navbar-brand" href="#" style="padding-left:10px; padding-right:10px;">
+             <b style="color:white;">YouthSaver</b>
+        </a>
+                    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><span class="iconify-inline" data-icon="ant-design:menu-outlined" style="color: white;" data-width="30" data-height="30"></span>
+        </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <span style= "font-size:21px; display:inline-block; color:white;">Welcome, </span>
+                <a class="nav-link dropdown-toggle" style="font-size:21px; display:inline-block; color:white;" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: auto !important; right: 0px; background-color:#17a2b8;" >
+                  <a class="dropdown-item" href="#" onclick="logout()" style="color:white; background-color: #17a2b8;"><span class="iconify" data-icon="codicon:sign-out" style="color: white;" data-width="20" data-height="20"></span>
+                    Logout</a>
+               
+                </div>
+              </li>
+            </ul>
+
+        </div>
+        <!-- the rest of buttons -->
+    </nav> 
+</div>
+
+
+<div id="page-wrap">
+    <div class="container-fluid">
+        <div class="row" style="text-align:center;">
+            <div class="col-md-12">
+                <b>Manage Child's Bank Account</b>
+            </div>
+           
+        
+
+        </div>
+        <hr>
+        <div class="row" style="text-align:center;">
+            <div class="col-md-12">
+                <span id = "numberofacc">
+                  
+                </span>
+            </div>
+        </div>
+        <section class="wrapper">
+            <div class="container-fostrap">
+            
+                <div class="content">
+                    <div class="container">
+                      
+                        <div class="col">
+                        
+                            
+                            <span id = "displaycard"></span>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+
+  
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+<script>
+  cust_id = [];
+  button = false;
+  number_of_request = 0;
+  parentgivenname = localStorage.getItem("givenname_response")
+  document.getElementById("navbarDropdown1").innerText = parentgivenname; 
+async function getChildAccount(){
+  parentlogindetail={userID: localStorage.getItem('userID') , pin: localStorage.getItem('PIN') }
+  parentresponse = await fetch ("https://customer-jdmb6xkj5a-as.a.run.app/parent/details",{method:'post',body:JSON.stringify(parentlogindetail)})
+  parentresponse = await parentresponse.json()
+  parentcustid = parentresponse.customerDetails.Content.ServiceResponse.CDMCustomer.Customer.CustomerID
+
+  bankresponse = await fetch('https://banks-jdmb6xkj5a-as.a.run.app/banks?userID=' + localStorage.getItem('userID') + '&pin=' + localStorage.getItem('PIN'),{mode:'cors'});
+              bankresponse = await bankresponse.json();
+              bankresponse = bankresponse.banks
+              
+        var request = new XMLHttpRequest();
+				request.onreadystatechange = function() {
+						if (request.readyState == 4 && request.status == 200) {
+              var obj = JSON.parse(this.responseText);
+              console.log(obj)
+              document.getElementById("numberofacc").innerHTML = "You have open " + obj.accounts.length + " child's account with us"
+              for (i = 0; i < obj.accounts.length; i++) {
+                cust_id.push(obj.accounts[i].ChildCustomerID);
+                
+              if (obj.accounts[i].Gender == "male"){
+                  image_source = "cartman.jpg";
+              } else {
+                  //console.log('hi')
+                  image_source = "wendy.jpg";
+              }
+              console.log(bankresponse)
+              for(v in bankresponse){
+                console.log(bankresponse[v])
+                if(parseInt(bankresponse[v].BankID) == parseInt(obj.accounts[i].BankID)){
+                  bankname=bankresponse[v].BankName
+                  bankinterest=bankresponse[v].BaseCurrency
+                  bankminbal=bankresponse[v].MinOpeningBalance
+                  
+                  
+                }
+              }
+              
+
+              document.getElementById("displaycard").innerHTML += `
+                                <div class="card">
+                                   
+                                    <img src="` + image_source + `" style="width:150px;height:150px;"/>
+                                
+                                
+                                    <div class="card-content">
+                                        <h4 class="card-title text-center">
+                                            `  + obj.accounts[i].ChildName + `
+                                            <hr>
+                                          
+                                        </h4>
+                                           Deposit Account: <b>$` + obj.accounts[i].ForceSavingsBalance + `
+                                           </b><br>
+                                           (Force Savings)
+                                           <br>
+                                           <br>
+                                           Savings Account: <b>$` + obj.accounts[i].SpendableBalance + `
+                                           </b><br>
+                                           (Withdrawable Amount)
+                                           <br><br>Bank:<b> `+ bankname+
+                                           `</b><br>Currency:<b> `+bankinterest+
+                                           `</b><br>Min Opening Bal:<b> `+bankminbal+
+                                    `</b></div>
+                                    <hr>
+                                    <div>
+                                      
+                                        <span id = "button` + obj.accounts[i].ChildCustomerID + `"></span>
+                                        <button type="button" class="btn btn-success btn-sm btn-radius" onclick = "changeURL('`+ obj.accounts[i].ChildAccountID + `' , '` + obj.accounts[i].ChildName + `' , '` + obj.accounts[i].DepositAccount + `' , '` + obj.accounts[i].Gender +  `')">Make a Transfer</button>
+                                        
+                                    </div>
+                                </div>
+                          <br>
+`
+							}				
+              displayrequest();	
+						}
+          }
+				
+				var final_url = "https://account-jdmb6xkj5a-as.a.run.app/accounts?customerID=" + parentcustid;
+				
+				
+
+				request.open("GET", final_url, true);
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				request.send();
+  
+                          }
+        getChildAccount();
+      
+        function changeURL(child_bank, child_name,childDepositAccount,Gender){
+          window.location.href = "maketransfer.html?childcustid=" + child_bank +"&childname=" + child_name + "&childDepositAccount=" + childDepositAccount + "&Gender=" + Gender;
+
+        }
+
+        function displayrequest(){
+          for (i = 0; i < cust_id.length; i++) {
+              console.log(cust_id[i])
+              numb_request(cust_id[i])
+        }
+      }
+
+        function numb_request(child_id){
+          var request = new XMLHttpRequest();
+				  request.onreadystatechange = function() {
+						if (request.readyState == 4 && request.status == 200) {
+              var obj = JSON.parse(this.responseText);
+              console.log(obj.requests)
+              for (i = 0; i < obj.requests.length; i++) {
+                if (obj.requests[i].Status == "PENDING"){
+                    number_of_request += 1;     
+                } 
+              }
+              console.log(child_id)
+              if(number_of_request==0){
+              document.getElementById("button" + child_id).innerHTML =  `<button type="button" class="btn btn-warning btn-sm btn-radius" onclick="gowithdrawrequest('`+child_id+`')" disabled>Withdrawal Request (` + number_of_request + `) </button>`;
+              }
+              else{
+                document.getElementById("button" + child_id).innerHTML =  `<button type="button" class="btn btn-warning btn-sm btn-radius" onclick="gowithdrawrequest('`+child_id+`')">Withdrawal Request (` + number_of_request + `) </button>`;
+              }
+              
+              number_of_request = 0;
+              }					
+						}
+				
+				var final_url = "https://request-jdmb6xkj5a-as.a.run.app/requests?customerID=" + child_id;
+				
+				
+
+				request.open("GET", final_url, true);
+				request.send();
+        }
+
+        function gowithdrawrequest(child_id){
+          console.log(child_id)
+          window.location.href = "withdrawrequest.html?childcustid=" +child_id ;
+      }
+
+
+        function logout(){
+          localStorage.clear();
+          window.location.href = "parentlogin.html";
+      }
+
+                
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+
+
+
+</html>
